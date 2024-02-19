@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A64BF1582B7D26350040C33C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1572B7D26350040C33C /* main.cpp */; };
+		A64BF1602B7D267B0040C33C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BF15F2B7D267B0040C33C /* Cocoa.framework */; };
+		A64BF1622B7D26840040C33C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BF1612B7D26840040C33C /* IOKit.framework */; };
+		A64BF1642B7D268B0040C33C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BF1632B7D268B0040C33C /* CoreVideo.framework */; };
+		A64BF1662B7D26920040C33C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BF1652B7D26920040C33C /* OpenGL.framework */; };
+		A64BF1682B7D26E90040C33C /* libraylib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A64BF1672B7D26B50040C33C /* libraylib.a */; };
+		A64BF16D2B7D27C30040C33C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF16B2B7D27C30040C33C /* Engine.cpp */; };
+		A64BF1702B7D2DA90040C33C /* StageManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF16E2B7D2DA90040C33C /* StageManager.cpp */; };
+		A64BF1732B7D2E5D0040C33C /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1712B7D2E5D0040C33C /* Stage.cpp */; };
+		A64BF1762B7D43660040C33C /* Main_Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1742B7D43660040C33C /* Main_Stage.cpp */; };
+		A6B62B812B7D5D9F0060B60D /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B7F2B7D5D9F0060B60D /* Button.cpp */; };
+		A6B62B882B7D782F0060B60D /* ReelsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B862B7D782F0060B60D /* ReelsManager.cpp */; };
+		A6B62B8B2B7E1E920060B60D /* Reels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B892B7E1E920060B60D /* Reels.cpp */; };
+		A6B62B9B2B8236070060B60D /* MotionBlurTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B992B8236070060B60D /* MotionBlurTexture.cpp */; };
+		A6B62B9E2B825D5C0060B60D /* Info_Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A64BF1522B7D26350040C33C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A64BF1542B7D26350040C33C /* CasinoSlotMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CasinoSlotMachine; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64BF1572B7D26350040C33C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A64BF15F2B7D267B0040C33C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A64BF1612B7D26840040C33C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		A64BF1632B7D268B0040C33C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A64BF1652B7D26920040C33C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A64BF1672B7D26B50040C33C /* libraylib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libraylib.a; path = "../../../../../Library/Frameworks/raylib-master/release/osx/libraylib.a"; sourceTree = "<group>"; };
+		A64BF16B2B7D27C30040C33C /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
+		A64BF16C2B7D27C30040C33C /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
+		A64BF16E2B7D2DA90040C33C /* StageManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StageManager.cpp; sourceTree = "<group>"; };
+		A64BF16F2B7D2DA90040C33C /* StageManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StageManager.hpp; sourceTree = "<group>"; };
+		A64BF1712B7D2E5D0040C33C /* Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stage.cpp; sourceTree = "<group>"; };
+		A64BF1722B7D2E5D0040C33C /* Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stage.hpp; sourceTree = "<group>"; };
+		A64BF1742B7D43660040C33C /* Main_Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main_Stage.cpp; sourceTree = "<group>"; };
+		A64BF1752B7D43660040C33C /* Main_Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Main_Stage.hpp; sourceTree = "<group>"; };
+		A6B62B7F2B7D5D9F0060B60D /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		A6B62B802B7D5D9F0060B60D /* Button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
+		A6B62B862B7D782F0060B60D /* ReelsManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReelsManager.cpp; sourceTree = "<group>"; };
+		A6B62B872B7D782F0060B60D /* ReelsManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ReelsManager.hpp; sourceTree = "<group>"; };
+		A6B62B892B7E1E920060B60D /* Reels.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Reels.cpp; sourceTree = "<group>"; };
+		A6B62B8A2B7E1E920060B60D /* Reels.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Reels.hpp; sourceTree = "<group>"; };
+		A6B62B992B8236070060B60D /* MotionBlurTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MotionBlurTexture.cpp; sourceTree = "<group>"; };
+		A6B62B9A2B8236070060B60D /* MotionBlurTexture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MotionBlurTexture.hpp; sourceTree = "<group>"; };
+		A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Info_Stage.cpp; sourceTree = "<group>"; };
+		A6B62B9D2B825D5C0060B60D /* Info_Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Info_Stage.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A64BF1512B7D26350040C33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64BF1682B7D26E90040C33C /* libraylib.a in Frameworks */,
+				A64BF1602B7D267B0040C33C /* Cocoa.framework in Frameworks */,
+				A64BF1662B7D26920040C33C /* OpenGL.framework in Frameworks */,
+				A64BF1622B7D26840040C33C /* IOKit.framework in Frameworks */,
+				A64BF1642B7D268B0040C33C /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A64BF14B2B7D26350040C33C = {
+			isa = PBXGroup;
+			children = (
+				A6B62B932B7ED4430060B60D /* Resources */,
+				A64BF1562B7D26350040C33C /* CasinoSlotMachine */,
+				A64BF1552B7D26350040C33C /* Products */,
+				A64BF15E2B7D267B0040C33C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A64BF1552B7D26350040C33C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A64BF1542B7D26350040C33C /* CasinoSlotMachine */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A64BF1562B7D26350040C33C /* CasinoSlotMachine */ = {
+			isa = PBXGroup;
+			children = (
+				A64BF1692B7D27A70040C33C /* Core */,
+				A64BF1572B7D26350040C33C /* main.cpp */,
+				A6B62B992B8236070060B60D /* MotionBlurTexture.cpp */,
+				A6B62B9A2B8236070060B60D /* MotionBlurTexture.hpp */,
+			);
+			path = CasinoSlotMachine;
+			sourceTree = "<group>";
+		};
+		A64BF15E2B7D267B0040C33C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A64BF1672B7D26B50040C33C /* libraylib.a */,
+				A64BF1652B7D26920040C33C /* OpenGL.framework */,
+				A64BF1632B7D268B0040C33C /* CoreVideo.framework */,
+				A64BF1612B7D26840040C33C /* IOKit.framework */,
+				A64BF15F2B7D267B0040C33C /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A64BF1692B7D27A70040C33C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A64BF16A2B7D27AF0040C33C /* GUI */,
+				A6B62B8F2B7EB7D70060B60D /* Stages */,
+				A64BF16E2B7D2DA90040C33C /* StageManager.cpp */,
+				A64BF16F2B7D2DA90040C33C /* StageManager.hpp */,
+				A64BF1712B7D2E5D0040C33C /* Stage.cpp */,
+				A64BF1722B7D2E5D0040C33C /* Stage.hpp */,
+				A64BF16B2B7D27C30040C33C /* Engine.cpp */,
+				A64BF16C2B7D27C30040C33C /* Engine.hpp */,
+				A6B62B862B7D782F0060B60D /* ReelsManager.cpp */,
+				A6B62B872B7D782F0060B60D /* ReelsManager.hpp */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A64BF16A2B7D27AF0040C33C /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				A6B62B7F2B7D5D9F0060B60D /* Button.cpp */,
+				A6B62B802B7D5D9F0060B60D /* Button.hpp */,
+				A6B62B892B7E1E920060B60D /* Reels.cpp */,
+				A6B62B8A2B7E1E920060B60D /* Reels.hpp */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		A6B62B8F2B7EB7D70060B60D /* Stages */ = {
+			isa = PBXGroup;
+			children = (
+				A64BF1742B7D43660040C33C /* Main_Stage.cpp */,
+				A64BF1752B7D43660040C33C /* Main_Stage.hpp */,
+				A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */,
+				A6B62B9D2B825D5C0060B60D /* Info_Stage.hpp */,
+			);
+			path = Stages;
+			sourceTree = "<group>";
+		};
+		A6B62B932B7ED4430060B60D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6B62B952B7ED4630060B60D /* Audio */,
+				A6B62B942B7ED45C0060B60D /* Textures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6B62B942B7ED45C0060B60D /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		A6B62B952B7ED4630060B60D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A64BF1532B7D26350040C33C /* CasinoSlotMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A64BF15B2B7D26350040C33C /* Build configuration list for PBXNativeTarget "CasinoSlotMachine" */;
+			buildPhases = (
+				A64BF1502B7D26350040C33C /* Sources */,
+				A64BF1512B7D26350040C33C /* Frameworks */,
+				A64BF1522B7D26350040C33C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CasinoSlotMachine;
+			productName = CasinoSlotMachine;
+			productReference = A64BF1542B7D26350040C33C /* CasinoSlotMachine */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A64BF14C2B7D26350040C33C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					A64BF1532B7D26350040C33C = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = A64BF14F2B7D26350040C33C /* Build configuration list for PBXProject "CasinoSlotMachine" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A64BF14B2B7D26350040C33C;
+			productRefGroup = A64BF1552B7D26350040C33C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A64BF1532B7D26350040C33C /* CasinoSlotMachine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A64BF1502B7D26350040C33C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64BF1582B7D26350040C33C /* main.cpp in Sources */,
+				A6B62B9B2B8236070060B60D /* MotionBlurTexture.cpp in Sources */,
+				A6B62B9E2B825D5C0060B60D /* Info_Stage.cpp in Sources */,
+				A64BF1702B7D2DA90040C33C /* StageManager.cpp in Sources */,
+				A64BF1732B7D2E5D0040C33C /* Stage.cpp in Sources */,
+				A64BF1762B7D43660040C33C /* Main_Stage.cpp in Sources */,
+				A64BF16D2B7D27C30040C33C /* Engine.cpp in Sources */,
+				A6B62B812B7D5D9F0060B60D /* Button.cpp in Sources */,
+				A6B62B882B7D782F0060B60D /* ReelsManager.cpp in Sources */,
+				A6B62B8B2B7E1E920060B60D /* Reels.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A64BF1592B7D26350040C33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A64BF15A2B7D26350040C33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A64BF15C2B7D26350040C33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/raylib-master/src";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/raylib-master/release/osx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A64BF15D2B7D26350040C33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/raylib-master/src";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/raylib-master/release/osx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A64BF14F2B7D26350040C33C /* Build configuration list for PBXProject "CasinoSlotMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64BF1592B7D26350040C33C /* Debug */,
+				A64BF15A2B7D26350040C33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A64BF15B2B7D26350040C33C /* Build configuration list for PBXNativeTarget "CasinoSlotMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64BF15C2B7D26350040C33C /* Debug */,
+				A64BF15D2B7D26350040C33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A64BF14C2B7D26350040C33C /* Project object */;
+}
