@@ -83,7 +83,6 @@ void cMain_Stage::Update()
     if (PlayBtn->IsPressed())
     {
         ReelsManager.SetRunning(true);
-        // @TODO: Clear lines
     }
     
     if (ReelsManager.IsRunning())

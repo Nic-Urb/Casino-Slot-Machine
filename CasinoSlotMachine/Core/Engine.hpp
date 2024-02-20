@@ -15,7 +15,7 @@
 using namespace std;
 
 /**
-    Core ....
+    A core class responsible for running the entire game loop
  */
 class cEngine
 {

@@ -13,11 +13,13 @@ cReelsManager::cReelsManager() :
             Reels(3,vector<sSymbol>(3)) // Init 3x3 vector matrix - 3 reels with 3 slots on each
 {
     // Fill symbols vector - insert objects at the end of vector
-    Symbols.push_back({"S", Texture(), "Resources/Textures/Symbols/Symbol1.png", 50.0, 0, 300});
-    Symbols.push_back({"A", Texture(), "Resources/Textures/Symbols/Symbol2.png", 10.0, 301, 1000});
-    Symbols.push_back({"K", Texture(), "Resources/Textures/Symbols/Symbol3.png", 5.0, 1001, 3500});
-    Symbols.push_back({"Q", Texture(), "Resources/Textures/Symbols/Symbol6.png", 2.0, 3501, 6500});
-    Symbols.push_back({"J", Texture(), "Resources/Textures/Symbols/Symbol7.png" ,1.0, 6501, 10000});
+    Symbols.push_back({"S", Texture(), "Resources/Textures/Symbols/Symbol1.png", 100.0, 0, 200});
+    Symbols.push_back({"A", Texture(), "Resources/Textures/Symbols/Symbol2.png", 25.0, 201, 500});
+    Symbols.push_back({"K", Texture(), "Resources/Textures/Symbols/Symbol3.png", 10.0, 501, 1200});
+    Symbols.push_back({"Q", Texture(), "Resources/Textures/Symbols/Symbol4.png", 5.0, 1201, 2500});
+    Symbols.push_back({"J", Texture(), "Resources/Textures/Symbols/Symbol6.png", 2.0, 2501, 3800});
+    Symbols.push_back({"10", Texture(), "Resources/Textures/Symbols/Symbol7.png", 0.5, 3801, 6500});
+    Symbols.push_back({"9", Texture(), "Resources/Textures/Symbols/Symbol8.png", 0.2, 6501 ,10000});
 }
 
 
