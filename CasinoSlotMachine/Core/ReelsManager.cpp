@@ -32,7 +32,7 @@ cReelsManager &cReelsManager::GetInstance()
 void cReelsManager::Play()
 {
     // Check these conditions, before we proced to check the winning cond.
-    if (Money >= Bet && Bet > 0.0)
+    if (CheckCanPlay())
     {
         CheckLinesCond();
         Money-=Bet;
@@ -42,6 +42,44 @@ void cReelsManager::Play()
         // If the player does not meet the conditions, display a message indicating insufficient funds or invalid bet amount
     }
 }
+
+bool cReelsManager::CheckCanPlay() 
+{
+    // Check these conditions, before we call play function
+    return (Money >= Bet && Bet > 0.0) ? true : false;
+}
+
+
+void cReelsManager::NextBet(bool Fwd)
+{    
+    // First we need to find location of current bet
+    int FoundIndex = -1;
+    for (int i = 0; i < Bets.size(); i++)
+    {
+        if (Bets[i] == Bet*100)
+        {
+            FoundIndex = i;
+            break; // Exit loop once the index is found
+        }
+    }
+    
+    // Check if FoundIndex is valid
+    if (FoundIndex == -1)
+    {
+        return;
+    }
+    
+    // Calculate the direction of cycling
+    const int Offset = (Fwd ? 1 : -1);
+    
+    // Use modulo for wrapping the value around
+    const int NextIndex = (FoundIndex + Offset + Bets.size()) % Bets.size();
+    
+    
+    // Update bet values base on the next index
+    Bet = Bets[NextIndex] / 100.0;
+}
+
 
 void cReelsManager::LoadTextures()
 {
@@ -156,6 +194,7 @@ void cReelsManager::CheckLinesCond()
     PayoutPrize=Payout;
     Money+=Payout;
 }
+
 
 
 

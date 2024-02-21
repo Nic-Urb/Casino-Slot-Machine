@@ -11,11 +11,12 @@
 #include "../GUI/Button.hpp"
 #include "../GUI/Reels.hpp"
 #include "ReelsManager.hpp"
-#include "raylib.h"
 
 using namespace std;
 
-
+/**
+    Display main stage
+ */
 class cMain_Stage : public cStage //@TODO: Unload texture while destructing
 {
 public:
@@ -29,6 +30,8 @@ public:
     
 private:
     
+    shared_ptr<cStage> Stage;
+    
     cReelsManager& ReelsManager;
     
     Texture2D BackgroundTexture;
@@ -36,11 +39,12 @@ private:
     Texture2D MessageTexture;
     Texture2D MessageTexture1;
     
-    shared_ptr<cStage> Stage;
+    unique_ptr<cButton> SwitchBtn; // Switch stage to InfoStage
     
-    unique_ptr<cButton> SwitchBtn;
     unique_ptr<cButton> PlayBtn;
+    
     unique_ptr<cButton> SoundBtn;
+    
     unique_ptr<cButton> IncBetBtn;
     unique_ptr<cButton> DecBetBtn;
 
@@ -49,8 +53,8 @@ private:
     bool SoundMuted = false;
     
     // Animation data for spinning reels
-    int currentFrame = 0;
-    int framesCounter = 0;
-    int framesSpeed = 7;
+    int CurrentFrame = 0;
+    int FramesCounter = 0;
+    int FramesSpeed = 7;
 };
 

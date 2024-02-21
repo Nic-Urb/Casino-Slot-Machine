@@ -67,6 +67,7 @@ cMain_Stage::~cMain_Stage()
 
 void cMain_Stage::Update()
 {
+    // Update GUI
     SwitchBtn->Update();
     PlayBtn->Update();
     SoundBtn->Update();
@@ -74,29 +75,30 @@ void cMain_Stage::Update()
     DecBetBtn->Update();
     Reels->Update();
     
+    // Change stage to info stage
     if (SwitchBtn->IsPressed())
     {
-        // Change scene to settings
         Stage = make_shared<cInfo_Stage>();
     }
     
-    if (PlayBtn->IsPressed())
+    if ((PlayBtn->IsPressed() || IsKeyPressed(KEY_SPACE)) && ReelsManager.CheckCanPlay())
     {
         ReelsManager.SetRunning(true);
     }
     
+    // Animate reels
     if (ReelsManager.IsRunning())
     {
-        framesCounter++;
-        if (framesCounter >= (60/framesSpeed))
+        FramesCounter++;
+        if (FramesCounter >= (60/FramesSpeed))
         {
-            framesCounter = 0;
-            currentFrame++;
+            FramesCounter = 0;
+            CurrentFrame++;
             ReelsManager.GenerateReels();
             
-            if (currentFrame > 10)
+            if (CurrentFrame > 10) // Stop animation after frame 10
             {
-                currentFrame = 0;
+                CurrentFrame = 0;
                 ReelsManager.Play();
                 ReelsManager.SetRunning(false);
             }
@@ -116,23 +118,15 @@ void cMain_Stage::Update()
         }
     }
     
+   
     if (IncBetBtn->IsPressed())
     {
-        if (ReelsManager.GetBet() > 1)
-        {
-            ReelsManager.SetBet(0.50);
-        } else {
-            ReelsManager.SetBet(0.10);
-        }
+        ReelsManager.NextBet(true);
     }
     
     if (DecBetBtn->IsPressed())
     {
-        if (ReelsManager.GetBet() >= 1.50) {
-            ReelsManager.SetBet(-0.50);
-        } else {
-            ReelsManager.SetBet(-0.10);
-        }
+        ReelsManager.NextBet(false);
     }
 }
 
@@ -148,13 +142,19 @@ void cMain_Stage::Draw()
     DrawTexture(MessageTexture, 340, GetScreenHeight()-51.5f, WHITE);
     DrawTexture(MessageTexture1, 160, GetScreenHeight()-51.5f, WHITE);
     
-    // Draw buttons
+    // Draw GUI
     SwitchBtn->Draw();
     PlayBtn->Draw();
     SoundBtn->Draw();
     IncBetBtn->Draw();
     DecBetBtn->Draw();
     Reels->Draw();
+    
+    // Draw a message indicating insufficient funds to play
+    if (!ReelsManager.CheckCanPlay())
+    {
+        DrawText("Insufficient fund !", GetScreenWidth()/2, GetScreenWidth()/2, 40.0f, RED);
+    }
     
     // Draw payout
     const float Payout = ReelsManager.GetPayoutPrize();

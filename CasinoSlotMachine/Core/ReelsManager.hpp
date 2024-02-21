@@ -43,6 +43,25 @@ enum eWinningLines
     DIAGONAL_BOTTOM
 };
 
+/**
+    Enumeration of bet values
+    The values are in cents because enumerations do not support float values.
+ */
+enum BetValues
+{
+    ZERO_TEN = 10,
+    ZERO_TWENTY = 20,
+    ZERO_FOURTY = 40,
+    ZERO_FIFTY = 50,
+    ZERO_EIGHTY = 80,
+    ONE = 100,
+    ONE_FIFTY = 150,
+    FIVE = 500,
+    TEN = 1000,
+    FIFTY = 5000,
+    HUNDRED = 10000
+};
+
 class cReelsManager
 {
     // Singleton
@@ -54,11 +73,14 @@ public:
     static cReelsManager& GetInstance();
     
     void Play();
+    bool CheckCanPlay();
+    
+    void GenerateReels();
     
     /**
-        Generate 3 reels, each with 3 slots
+        Cycles through bets values - Fwd set to false cycles slots backward, else forward
      */
-    void GenerateReels();
+    void NextBet(bool Fwd);
     
     void LoadTextures();
     void UnloadTextures();
@@ -77,14 +99,6 @@ public:
         Money = NewMoney;
     }
     
-    void SetBet(float NewBet)
-    {
-        if (Bet+NewBet >= 0.1)
-        {
-            Bet += NewBet;
-        }
-    }
-    
     void SetRunning(bool Value)
     {
         Running = Value;
@@ -97,8 +111,14 @@ private:
     
     float PayoutPrize;
     
+    // Vector containing all possible bet values
+    vector<BetValues> Bets = { ZERO_TEN, ZERO_TWENTY, ZERO_FOURTY, ZERO_FIFTY, ZERO_EIGHTY, ONE, ONE_FIFTY, FIVE, TEN, FIFTY, HUNDRED };
+    
     // True, if the reels are still spinning, else false
     bool Running = false;
+    
+    // True, if we met conditions to play
+    bool CanPlay = false;
     
     // Vector containing all possible symbol data
     vector<sSymbol> Symbols;
