@@ -9,7 +9,7 @@
 
 int main(int argc, const char * argv[])
 {
-    cEngine& Engine = cEngine::GetInstance();
+    Engine& Engine = Engine::GetInstance();
     
     Engine.Run();
     

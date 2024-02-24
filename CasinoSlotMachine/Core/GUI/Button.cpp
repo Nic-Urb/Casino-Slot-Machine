@@ -7,12 +7,12 @@
 
 #include "Button.hpp"
 
-cButton::cButton()
+Button::Button()
 {
     // @TODO: Load some default texture
 }
 
-cButton::cButton(string TexturePath, string HoveredTexturePath, string SfxPath)
+Button::Button(string TexturePath, string HoveredTexturePath, string SfxPath)
 {
     try {
         BtnTexture = LoadTexture(TexturePath.c_str());
@@ -34,7 +34,7 @@ cButton::cButton(string TexturePath, string HoveredTexturePath, string SfxPath)
 }
 
 
-cButton::~cButton()
+Button::~Button()
 {
     UnloadTexture(BtnTexture);
     UnloadTexture(BtnHoveredTexture);
@@ -42,13 +42,13 @@ cButton::~cButton()
     TraceLog(LOG_INFO, "Button: Destroyed");
 }
 
-void cButton::SetPosition(Vector2 Position)
+void Button::SetPosition(Vector2 Position)
 {
     Rectangle NewPosition = { Position.x, Position.y, static_cast<float>(BtnTexture.width), static_cast<float>(BtnTexture.height) };
     Collision = NewPosition;
 }
 
-void cButton::Update()
+void Button::Update()
 {
     // Mouse position
     Vector2 MousePos = GetMousePosition();
@@ -77,7 +77,7 @@ void cButton::Update()
     }
 }
 
-void cButton::Draw()
+void Button::Draw()
 {
     if (SwitchTexture)
     {

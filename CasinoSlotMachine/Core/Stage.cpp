@@ -7,7 +7,7 @@
 
 #include "Stage.hpp"
 
-shared_ptr<cStage> cStage::GetStage()
+shared_ptr<Stage> Stage::GetStage()
 {
     return nullptr;
 }

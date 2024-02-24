@@ -9,8 +9,8 @@
 
 
 
-cReelsManager::cReelsManager() :
-            Reels(3,vector<sSymbol>(3)) // Init 3x3 vector matrix - 3 reels with 3 slots on each
+ReelsManager::ReelsManager() :
+            Reels(3,vector<Symbol>(3)) // Init 3x3 vector matrix - 3 reels with 3 slots on each
 {
     // Fill symbols vector - insert objects at the end of vector
     Symbols.push_back({"S", Texture(), "Resources/Textures/Symbols/Symbol1.png", 100.0, 0, 200});
@@ -23,13 +23,13 @@ cReelsManager::cReelsManager() :
 }
 
 
-cReelsManager &cReelsManager::GetInstance()
+ReelsManager &ReelsManager::GetInstance()
 {
-    static cReelsManager Instance;
+    static ReelsManager Instance;
     return Instance;
 }
 
-void cReelsManager::Play()
+void ReelsManager::Play()
 {
     // Check these conditions, before we proced to check the winning cond.
     if (CheckCanPlay())
@@ -43,14 +43,14 @@ void cReelsManager::Play()
     }
 }
 
-bool cReelsManager::CheckCanPlay() 
+bool ReelsManager::CheckCanPlay()
 {
     // Check these conditions, before we call play function
     return (Money >= Bet && Bet > 0.0) ? true : false;
 }
 
 
-void cReelsManager::NextBet(bool Fwd)
+void ReelsManager::NextBet(bool Fwd)
 {    
     // First we need to find location of current bet
     int FoundIndex = -1;
@@ -81,7 +81,7 @@ void cReelsManager::NextBet(bool Fwd)
 }
 
 
-void cReelsManager::LoadTextures()
+void ReelsManager::LoadTextures()
 {
     for (auto& Symbol : Symbols)
     {
@@ -89,7 +89,7 @@ void cReelsManager::LoadTextures()
     }
 }
 
-void cReelsManager::UnloadTextures() 
+void ReelsManager::UnloadTextures()
 {
     for (auto& Symbol : Symbols) 
     {
@@ -97,7 +97,7 @@ void cReelsManager::UnloadTextures()
     }
 }
 
-int cReelsManager::BiniarySearch(int Target)
+int ReelsManager::BiniarySearch(int Target)
 {
     const size_t Size = Symbols.size();
     
@@ -127,7 +127,7 @@ int cReelsManager::BiniarySearch(int Target)
     return Idx_max;
 }
 
-int cReelsManager::GenerateRandomNumber(int Min, int Max)
+int ReelsManager::GenerateRandomNumber(int Min, int Max)
 {
     random_device rd; // Random device, gives some initial randomness to help initialize things
     mt19937 gen(rd()); // Algorithm to generate the random number
@@ -135,13 +135,13 @@ int cReelsManager::GenerateRandomNumber(int Min, int Max)
     return dis(gen);
 }
 
-const sSymbol& cReelsManager::PickRandomSymbol() 
+const Symbol& ReelsManager::PickRandomSymbol()
 {
     const int RandNumber = GenerateRandomNumber(0, 10000);
     return Symbols[BiniarySearch(RandNumber)];
 }
 
-void cReelsManager::GenerateReels() 
+void ReelsManager::GenerateReels()
 {
     // Iterate through Reels and set random value for each
     for (int i = 0; i < 3; i++)
@@ -153,7 +153,7 @@ void cReelsManager::GenerateReels()
     }
 }
 
-void cReelsManager::CheckLinesCond()
+void ReelsManager::CheckLinesCond()
 {
     float Payout = 0;
     // Before checking the line conditions, verify if the map is empty so that we can fill it with data
@@ -168,12 +168,12 @@ void cReelsManager::CheckLinesCond()
         {
             if (i == 0)
             {
-                WinningLines.push_back(eWinningLines::HORIZONTAL_TOP);
+                WinningLines.push_back(WinningLines::HORIZONTAL_TOP);
             } else if (i == 1)
             {
-                WinningLines.push_back(eWinningLines::HORIZONTAL_MIDDLE);
+                WinningLines.push_back(WinningLines::HORIZONTAL_MIDDLE);
             } else {
-                WinningLines.push_back(eWinningLines::HORIZONTAL_BOTTOM);
+                WinningLines.push_back(WinningLines::HORIZONTAL_BOTTOM);
             }
             Payout += Reels[i][0].WinValue*Bet;
         }
@@ -181,12 +181,12 @@ void cReelsManager::CheckLinesCond()
     // Check diagonal lines
     if (Reels[0][0].Name.compare(Reels[1][1].Name) == 0 && Reels[1][1].Name.compare(Reels[2][2].Name) == 0)
     {
-        WinningLines.push_back(eWinningLines::DIAGONAL_TOP);
+        WinningLines.push_back(WinningLines::DIAGONAL_TOP);
         Payout += Reels[0][0].WinValue*Bet;
     }
     if (Reels[2][0].Name.compare(Reels[1][1].Name) == 0 && Reels[1][1].Name.compare(Reels[0][2].Name) == 0) 
     {
-        WinningLines.push_back(eWinningLines::DIAGONAL_BOTTOM);
+        WinningLines.push_back(WinningLines::DIAGONAL_BOTTOM);
         Payout += Reels[2][0].WinValue*Bet;
     }
     

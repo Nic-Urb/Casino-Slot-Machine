@@ -19,7 +19,7 @@ using namespace std;
 /**
     A custom data structure containing symbol data
  */
-struct sSymbol
+struct Symbol
 {
     string Name;
     Texture2D Texture;
@@ -32,7 +32,7 @@ struct sSymbol
 /**
     Enumeration of winning lines
  */
-enum eWinningLines
+enum WinningLines
 {
     HORIZONTAL_TOP,
     HORIZONTAL_MIDDLE,
@@ -62,15 +62,15 @@ enum BetValues
     HUNDRED = 10000
 };
 
-class cReelsManager
+class ReelsManager
 {
     // Singleton
-    cReelsManager();
+    ReelsManager();
     
 public:
     
     // Singleton get instance method
-    static cReelsManager& GetInstance();
+    static ReelsManager& GetInstance();
     
     void Play();
     bool CheckCanPlay();
@@ -90,9 +90,9 @@ public:
     float GetBet() const { return Bet; }
     float GetPayoutPrize() const { return PayoutPrize; }
     bool IsRunning() const { return Running; }
-    vector<sSymbol> GetSymbols() const { return Symbols; }
-    vector<vector<sSymbol>> GetReels() const { return Reels; }
-    vector<eWinningLines> GetWinningLines() const { return WinningLines;}
+    vector<Symbol> GetSymbols() const { return Symbols; }
+    vector<vector<Symbol>> GetReels() const { return Reels; }
+    vector<WinningLines> GetWinningLines() const { return WinningLines;}
     
     void SetMoney(float NewMoney)
     {
@@ -121,14 +121,13 @@ private:
     bool CanPlay = false;
     
     // Vector containing all possible symbol data
-    vector<sSymbol> Symbols;
+    vector<Symbol> Symbols;
     
     // 2D-Vector containing reels filled with symbols
-    vector<vector<sSymbol>> Reels;
+    vector<vector<Symbol>> Reels;
     
     // Winning lines map
-    vector<eWinningLines> WinningLines;
-    
+    vector<WinningLines> WinningLines;
     
     /**
         Do binary search and find closest location element
@@ -144,7 +143,7 @@ private:
     /**
         Generate random number in range [0, 10000] & return symbol found using a biniary search
      */
-    const sSymbol& PickRandomSymbol();
+    const Symbol& PickRandomSymbol();
     
     /**
         Tries to find a matching line, and if one is found, stores it in a WinningLines map

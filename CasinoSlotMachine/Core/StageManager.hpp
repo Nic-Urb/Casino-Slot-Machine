@@ -10,22 +10,22 @@
 #include "Stage.hpp"
 #include "raylib.h"
 
-#include "Main_Stage.hpp"
+#include "MainStage.hpp"
 
 using namespace std;
 
 /**
     This class manages which stage (cStage) is currently being displayed and rendered within the window
  */
-class cStageManager //@TODO: Add transition while changing; if(current != new) -> do transition
+class StageManager //@TODO: Add transition while changing; if(current != new) -> do transition
 {
     //Singleton
-    cStageManager();
-    
+    StageManager();
+
 public:
     
     // Singleton get instance method
-    static cStageManager& GetInstance();
+    static StageManager& GetInstance();
     
     void Update();
     void Draw();
@@ -34,7 +34,7 @@ public:
 private:
     
     // Tracks which stage is currently used
-    shared_ptr<cStage> CurrentStage;
+    shared_ptr<Stage> CurrentStage;
     
     /**
         Initialize the stage to being displayed and rendered within the window - this function is only called if there is no current stag

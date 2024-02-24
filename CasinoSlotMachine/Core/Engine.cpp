@@ -8,18 +8,18 @@
 #include "Engine.hpp"
 
 
-cEngine::cEngine() :
-    StageManager(cStageManager::GetInstance())
+Engine::Engine() :
+    StageManager(StageManager::GetInstance())
 {
 }
 
-cEngine &cEngine::GetInstance() 
+Engine &Engine::GetInstance()
 {
-    static cEngine Instance;
+    static Engine Instance;
     return Instance;
 }
 
-void cEngine::Run()
+void Engine::Run()
 {
     InitWindow(WindowWidth, WindowHeight, "raylib [core] example - basic window");
     InitAudioDevice();

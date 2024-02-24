@@ -16,14 +16,14 @@ using namespace std;
 /**
     This class contains a button along with its logic, which can be rendered within a window
  */
-class cButton
+class Button
 {
     
 public:
     
-    cButton();
-    cButton(string TexturePath, string HoveredTexturePath, string SfxPath);
-    ~cButton();
+    Button();
+    Button(string TexturePath, string HoveredTexturePath, string SfxPath);
+    ~Button();
     
     
     void Update();

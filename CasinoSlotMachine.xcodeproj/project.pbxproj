@@ -16,12 +16,12 @@
 		A64BF16D2B7D27C30040C33C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF16B2B7D27C30040C33C /* Engine.cpp */; };
 		A64BF1702B7D2DA90040C33C /* StageManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF16E2B7D2DA90040C33C /* StageManager.cpp */; };
 		A64BF1732B7D2E5D0040C33C /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1712B7D2E5D0040C33C /* Stage.cpp */; };
-		A64BF1762B7D43660040C33C /* Main_Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1742B7D43660040C33C /* Main_Stage.cpp */; };
+		A64BF1762B7D43660040C33C /* MainStage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64BF1742B7D43660040C33C /* MainStage.cpp */; };
 		A6B62B812B7D5D9F0060B60D /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B7F2B7D5D9F0060B60D /* Button.cpp */; };
 		A6B62B882B7D782F0060B60D /* ReelsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B862B7D782F0060B60D /* ReelsManager.cpp */; };
 		A6B62B8B2B7E1E920060B60D /* Reels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B892B7E1E920060B60D /* Reels.cpp */; };
 		A6B62B9B2B8236070060B60D /* MotionBlurTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B992B8236070060B60D /* MotionBlurTexture.cpp */; };
-		A6B62B9E2B825D5C0060B60D /* Info_Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */; };
+		A6B62B9E2B825D5C0060B60D /* InfoStage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6B62B9C2B825D5C0060B60D /* InfoStage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,8 +50,8 @@
 		A64BF16F2B7D2DA90040C33C /* StageManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StageManager.hpp; sourceTree = "<group>"; };
 		A64BF1712B7D2E5D0040C33C /* Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stage.cpp; sourceTree = "<group>"; };
 		A64BF1722B7D2E5D0040C33C /* Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stage.hpp; sourceTree = "<group>"; };
-		A64BF1742B7D43660040C33C /* Main_Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main_Stage.cpp; sourceTree = "<group>"; };
-		A64BF1752B7D43660040C33C /* Main_Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Main_Stage.hpp; sourceTree = "<group>"; };
+		A64BF1742B7D43660040C33C /* MainStage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainStage.cpp; sourceTree = "<group>"; };
+		A64BF1752B7D43660040C33C /* MainStage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainStage.hpp; sourceTree = "<group>"; };
 		A6B62B7F2B7D5D9F0060B60D /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
 		A6B62B802B7D5D9F0060B60D /* Button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
 		A6B62B862B7D782F0060B60D /* ReelsManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReelsManager.cpp; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		A6B62B8A2B7E1E920060B60D /* Reels.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Reels.hpp; sourceTree = "<group>"; };
 		A6B62B992B8236070060B60D /* MotionBlurTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MotionBlurTexture.cpp; sourceTree = "<group>"; };
 		A6B62B9A2B8236070060B60D /* MotionBlurTexture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MotionBlurTexture.hpp; sourceTree = "<group>"; };
-		A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Info_Stage.cpp; sourceTree = "<group>"; };
-		A6B62B9D2B825D5C0060B60D /* Info_Stage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Info_Stage.hpp; sourceTree = "<group>"; };
+		A6B62B9C2B825D5C0060B60D /* InfoStage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InfoStage.cpp; sourceTree = "<group>"; };
+		A6B62B9D2B825D5C0060B60D /* InfoStage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InfoStage.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +152,10 @@
 		A6B62B8F2B7EB7D70060B60D /* Stages */ = {
 			isa = PBXGroup;
 			children = (
-				A64BF1742B7D43660040C33C /* Main_Stage.cpp */,
-				A64BF1752B7D43660040C33C /* Main_Stage.hpp */,
-				A6B62B9C2B825D5C0060B60D /* Info_Stage.cpp */,
-				A6B62B9D2B825D5C0060B60D /* Info_Stage.hpp */,
+				A64BF1742B7D43660040C33C /* MainStage.cpp */,
+				A64BF1752B7D43660040C33C /* MainStage.hpp */,
+				A6B62B9C2B825D5C0060B60D /* InfoStage.cpp */,
+				A6B62B9D2B825D5C0060B60D /* InfoStage.hpp */,
 			);
 			path = Stages;
 			sourceTree = "<group>";
@@ -242,10 +242,10 @@
 			files = (
 				A64BF1582B7D26350040C33C /* main.cpp in Sources */,
 				A6B62B9B2B8236070060B60D /* MotionBlurTexture.cpp in Sources */,
-				A6B62B9E2B825D5C0060B60D /* Info_Stage.cpp in Sources */,
+				A6B62B9E2B825D5C0060B60D /* InfoStage.cpp in Sources */,
 				A64BF1702B7D2DA90040C33C /* StageManager.cpp in Sources */,
 				A64BF1732B7D2E5D0040C33C /* Stage.cpp in Sources */,
-				A64BF1762B7D43660040C33C /* Main_Stage.cpp in Sources */,
+				A64BF1762B7D43660040C33C /* MainStage.cpp in Sources */,
 				A64BF16D2B7D27C30040C33C /* Engine.cpp in Sources */,
 				A6B62B812B7D5D9F0060B60D /* Button.cpp in Sources */,
 				A6B62B882B7D782F0060B60D /* ReelsManager.cpp in Sources */,

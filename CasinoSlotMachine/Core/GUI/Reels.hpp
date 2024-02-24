@@ -16,13 +16,13 @@ using namespace std;
 /**
     This class contains a reels , which can be rendered within a window
  */
-class cReels
+class Reels
 {
     
 public:
     
-    cReels(string ReelTexturePath);
-    ~cReels();
+    Reels(string ReelTexturePath);
+    ~Reels();
     
     void Update();
     void Draw();
@@ -30,7 +30,7 @@ public:
 private:
     
     // Instance to ReelsManager class
-    cReelsManager& ReelsManager;
+    ReelsManager& ReelsManager;
     
     vector<Vector2> ReelsPositions;
     

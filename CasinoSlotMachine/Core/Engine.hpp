@@ -17,15 +17,15 @@ using namespace std;
 /**
     A core class responsible for running the entire game loop
  */
-class cEngine
+class Engine
 {
     // Singleton
-    cEngine();
+    Engine();
     
 public:
     
     // Singleton get instance method
-    static cEngine& GetInstance();
+    static Engine& GetInstance();
     
     void Run();
     
@@ -36,5 +36,5 @@ private:
     const int WindowHeight = 450;
     
     // StageManager instance
-    cStageManager& StageManager;
+    StageManager& StageManager;
 };

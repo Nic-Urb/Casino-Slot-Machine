@@ -8,23 +8,23 @@
 #include "StageManager.hpp"
 
 
-cStageManager::cStageManager()
+StageManager::StageManager()
 { 
 }
 
-cStageManager &cStageManager::GetInstance()
+StageManager &StageManager::GetInstance()
 {
-    static cStageManager Instance;
+    static StageManager Instance;
     return Instance;
 }
 
-void cStageManager::Init()
+void StageManager::Init()
 { 
     // make_shared creates a pointer for shared_ptr<cStage>
-    CurrentStage = make_shared<cMain_Stage>();
+    CurrentStage = make_shared<MainStage>();
 }
 
-void cStageManager::Update() 
+void StageManager::Update()
 {
     if (CurrentStage == nullptr)
     {
@@ -36,7 +36,7 @@ void cStageManager::Update()
     CurrentStage->Update();
 }
 
-void cStageManager::Draw()
+void StageManager::Draw()
 {
     BeginDrawing();
         CurrentStage->Draw();
@@ -44,7 +44,7 @@ void cStageManager::Draw()
     EndDrawing();
 }
 
-bool cStageManager::Close()
+bool StageManager::Close()
 {
     // De-Initialization
         
@@ -53,10 +53,10 @@ bool cStageManager::Close()
     return false;
 }
 
-void cStageManager::GetStage()
+void StageManager::GetStage()
 {
     // Updates the stage to the one currently stored in CurrentStage
-    shared_ptr<cStage> Stage = CurrentStage->GetStage();
+    shared_ptr<Stage> Stage = CurrentStage->GetStage();
     if (Stage!=nullptr)
     {
         CurrentStage = Stage;

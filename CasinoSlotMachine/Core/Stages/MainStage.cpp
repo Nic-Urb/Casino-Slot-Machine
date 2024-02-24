@@ -5,21 +5,21 @@
 //  Created by Nicolas U on 14.02.24.
 //
 
-#include "Main_Stage.hpp"
-#include "../Stages/Info_Stage.hpp"
+#include "MainStage.hpp"
+#include "../Stages/InfoStage.hpp"
 
-cMain_Stage::cMain_Stage() :
-    ReelsManager(cReelsManager::GetInstance())
+MainStage::MainStage() :
+    ReelsManager(ReelsManager::GetInstance())
 {
     Stage = nullptr;
     
-    SwitchBtn = make_unique<cButton>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/ButtonSound.wav");
-    PlayBtn = make_unique<cButton>("Resources/Textures/Play.png", "Resources/Textures/PlayPressed.png", "Resources/Audio/ButtonSound.wav");
-    SoundBtn = make_unique<cButton>("Resources/Textures/Sound.png","Resources/Textures/SoundPressed.png", "Resources/Audio/ButtonSound.wav");
-    IncBetBtn = make_unique<cButton>("Resources/Textures/Inc.png","Resources/Textures/IncPressed.png","Resources/Audio/ButtonSound.wav");
-    DecBetBtn = make_unique<cButton>("Resources/Textures/Dec.png","Resources/Textures/DecPressed.png","Resources/Audio/ButtonSound.wav");
+    SwitchBtn = make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/ButtonSound.wav");
+    PlayBtn = make_unique<Button>("Resources/Textures/Play.png", "Resources/Textures/PlayPressed.png", "Resources/Audio/ButtonSound.wav");
+    SoundBtn = make_unique<Button>("Resources/Textures/Sound.png","Resources/Textures/SoundPressed.png", "Resources/Audio/ButtonSound.wav");
+    IncBetBtn = make_unique<Button>("Resources/Textures/Inc.png","Resources/Textures/IncPressed.png","Resources/Audio/ButtonSound.wav");
+    DecBetBtn = make_unique<Button>("Resources/Textures/Dec.png","Resources/Textures/DecPressed.png","Resources/Audio/ButtonSound.wav");
     
-    Reels = make_unique<cReels>("Resources/Textures/Reel.png");
+    ReelsPtr = make_unique<Reels>("Resources/Textures/Reel.png");
     
     SwitchBtn->SetPosition(Vector2{GetScreenWidth()-40.0f,20});
     PlayBtn->SetPosition(Vector2{598.0f,GetScreenHeight()-51.5f});
@@ -55,7 +55,7 @@ cMain_Stage::cMain_Stage() :
 
 }
 
-cMain_Stage::~cMain_Stage()
+MainStage::~MainStage()
 {
     // Unload textures
     TraceLog(LOG_INFO, "Main Stage: Destroyed");
@@ -65,7 +65,7 @@ cMain_Stage::~cMain_Stage()
     UnloadTexture(BottomBarTexture);
 }
 
-void cMain_Stage::Update()
+void MainStage::Update()
 {
     // Update GUI
     SwitchBtn->Update();
@@ -73,12 +73,12 @@ void cMain_Stage::Update()
     SoundBtn->Update();
     IncBetBtn->Update();
     DecBetBtn->Update();
-    Reels->Update();
+    ReelsPtr->Update();
     
     // Change stage to info stage
     if (SwitchBtn->IsPressed())
     {
-        Stage = make_shared<cInfo_Stage>();
+        Stage = make_shared<InfoStage>();
     }
     
     if ((PlayBtn->IsPressed() || IsKeyPressed(KEY_SPACE)) && ReelsManager.CheckCanPlay())
@@ -130,7 +130,7 @@ void cMain_Stage::Update()
     }
 }
 
-void cMain_Stage::Draw()
+void MainStage::Draw()
 {
     // Draw background texture
     DrawTexture(BackgroundTexture, 0, 0, WHITE);
@@ -148,7 +148,7 @@ void cMain_Stage::Draw()
     SoundBtn->Draw();
     IncBetBtn->Draw();
     DecBetBtn->Draw();
-    Reels->Draw();
+    ReelsPtr->Draw();
     
     // Draw a message indicating insufficient funds to play
     if (!ReelsManager.CheckCanPlay())
@@ -168,7 +168,7 @@ void cMain_Stage::Draw()
     DrawText(TextFormat("Bet: %02.02f",ReelsManager.GetBet()), (160+MessageTexture1.width/2)-40, (GetScreenHeight()-41), 20.0f, WHITE);
 }
 
-shared_ptr<cStage> cMain_Stage::GetStage() 
+shared_ptr<Stage> MainStage::GetStage() 
 { 
     return Stage;
 }

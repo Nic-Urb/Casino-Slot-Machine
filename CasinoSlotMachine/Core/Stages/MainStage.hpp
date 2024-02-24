@@ -17,38 +17,38 @@ using namespace std;
 /**
     Display main stage
  */
-class cMain_Stage : public cStage //@TODO: Unload texture while destructing
+class MainStage : public Stage //@TODO: Unload texture while destructing
 {
 public:
     
-    cMain_Stage();
-    ~cMain_Stage();
+    MainStage();
+    ~MainStage();
     
     void Update() override;
     void Draw() override;
-    shared_ptr<cStage> GetStage() override;
+    shared_ptr<Stage> GetStage() override;
     
 private:
     
-    shared_ptr<cStage> Stage;
+    shared_ptr<Stage> Stage;
     
-    cReelsManager& ReelsManager;
+    ReelsManager& ReelsManager;
     
     Texture2D BackgroundTexture;
     Texture2D BottomBarTexture;
     Texture2D MessageTexture;
     Texture2D MessageTexture1;
     
-    unique_ptr<cButton> SwitchBtn; // Switch stage to InfoStage
+    unique_ptr<Button> SwitchBtn; // Switch stage to InfoStage
     
-    unique_ptr<cButton> PlayBtn;
+    unique_ptr<Button> PlayBtn;
     
-    unique_ptr<cButton> SoundBtn;
+    unique_ptr<Button> SoundBtn;
     
-    unique_ptr<cButton> IncBetBtn;
-    unique_ptr<cButton> DecBetBtn;
+    unique_ptr<Button> IncBetBtn;
+    unique_ptr<Button> DecBetBtn;
 
-    unique_ptr<cReels> Reels;
+    unique_ptr<Reels> ReelsPtr;
     
     bool SoundMuted = false;
     

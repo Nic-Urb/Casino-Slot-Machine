@@ -12,23 +12,23 @@
 /**
     This stage displays information about the symbol values for payouts
  */
-class cInfo_Stage : public cStage {
+class InfoStage : public Stage {
     
 public:
     
-    cInfo_Stage();
-    ~cInfo_Stage();
+    InfoStage();
+    ~InfoStage();
     
     void Update() override;
     void Draw() override;
-    shared_ptr<cStage> GetStage() override;
+    shared_ptr<Stage> GetStage() override;
     
 private:
     
     Texture2D BackgroundTexture;
     
-    unique_ptr<cButton> SwitchBtn;
+    unique_ptr<Button> SwitchBtn;
     
-    shared_ptr<cStage> Stage;
+    shared_ptr<Stage> Stage;
     
 };

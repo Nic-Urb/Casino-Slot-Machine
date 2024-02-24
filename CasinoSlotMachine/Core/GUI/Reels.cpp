@@ -8,26 +8,26 @@
 #include "Reels.hpp"
 
 
-cReels::cReels(string ReelTexturePath) :
-    ReelsManager(cReelsManager::GetInstance())
+Reels::Reels(string ReelTexturePath) :
+    ReelsManager(ReelsManager::GetInstance())
 {
     Init(ReelTexturePath);
 }
 
-cReels::~cReels()
+Reels::~Reels()
 {
     // Unload textures
     UnloadTexture(ReelsTexture);
     ReelsManager.UnloadTextures();
 }
 
-void cReels::Update()
+void Reels::Update()
 {
 }
 
-void cReels::Draw()
+void Reels::Draw()
 {
-    const vector<vector<sSymbol>> Reels = ReelsManager.GetReels();
+    const vector<vector<Symbol>> Reels = ReelsManager.GetReels();
     
     // Draw 3 reels from a middle point
     for (int i = 0; i < 3; i++) {
@@ -56,7 +56,7 @@ void cReels::Draw()
     DrawLines();
 }
 
-void cReels::Init(string ReelTexturePath)
+void Reels::Init(string ReelTexturePath)
 {
     // Load reels texture
     try {
@@ -82,9 +82,9 @@ void cReels::Init(string ReelTexturePath)
 
 }
 
-void cReels::DrawLines()
+void Reels::DrawLines()
 {
-    vector<eWinningLines> Lines = ReelsManager.GetWinningLines();
+    vector<WinningLines> Lines = ReelsManager.GetWinningLines();
     
     const int ReelWidth = ReelsTexture.width;
     const int ReelHeight = ReelsTexture.height;

@@ -7,6 +7,7 @@
 #pragma once
 
 #include <stdio.h>
+#include <memory>
 #include <iostream>
 
 using namespace std;
@@ -14,7 +15,7 @@ using namespace std;
 /**
     This class contains a stage that can be rendered into a window. It serves as the base class; do not utilize it directly, instead use its subclasses
  */
-class cStage {
+class Stage {
     
 public:
     
@@ -22,5 +23,5 @@ public:
     virtual void Draw() {}
     
     /** This method is utilized to establish the appropriate scene within a StageManager class, specifically intended to be invoked within the StageManager's update() function and returns either this stage or another stage **/
-    virtual shared_ptr<cStage> GetStage();
+    virtual shared_ptr<Stage> GetStage();
 };

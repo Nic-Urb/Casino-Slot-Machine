@@ -5,15 +5,15 @@
 //  Created by Nicolas U on 18.02.24.
 //
 
-#include "Info_Stage.hpp"
-#include "../Stages/Main_Stage.hpp"
+#include "InfoStage.hpp"
+#include "../Stages/MainStage.hpp"
 
 
-cInfo_Stage::cInfo_Stage()
+InfoStage::InfoStage()
 {
     Stage = nullptr;
     
-    SwitchBtn = make_unique<cButton>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/Button.wav");
+    SwitchBtn = make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/Button.wav");
     
     SwitchBtn->SetPosition(Vector2{GetScreenWidth()-40.0f,20});
     
@@ -24,29 +24,29 @@ cInfo_Stage::cInfo_Stage()
     }
 }
 
-cInfo_Stage::~cInfo_Stage()
+InfoStage::~InfoStage()
 {
     UnloadTexture(BackgroundTexture);
 }
 
-void cInfo_Stage::Update()
+void InfoStage::Update()
 {
     SwitchBtn->Update();
     if (SwitchBtn->IsPressed())
     {
         // Change scene to settings
-       Stage = make_shared<cMain_Stage>();
+       Stage = make_shared<MainStage>();
     }
 }
 
-void cInfo_Stage::Draw() 
+void InfoStage::Draw()
 {
     DrawTexture(BackgroundTexture, 0, 0, WHITE);
     
     SwitchBtn->Draw();
 }
 
-shared_ptr<cStage> cInfo_Stage::GetStage() 
+shared_ptr<Stage> InfoStage::GetStage()
 { 
     return Stage;
 }
