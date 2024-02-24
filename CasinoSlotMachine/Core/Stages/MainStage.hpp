@@ -17,7 +17,7 @@ using namespace std;
 /**
     Display main stage
  */
-class MainStage : public Stage //@TODO: Unload texture while destructing
+class MainStage : public Stage
 {
 public:
     

@@ -20,8 +20,20 @@ StageManager &StageManager::GetInstance()
 
 void StageManager::Init()
 { 
-    // make_shared creates a pointer for shared_ptr<cStage>
+    // make_shared creates a pointer for shared_ptr<Stage>
     CurrentStage = make_shared<MainStage>();
+}
+
+void StageManager::UpdateTransition()
+{
+    // Update transition alpha
+    TransitionAlpha += 0.05;
+    if (TransitionAlpha >= 1.0f)
+    {
+        TransitionAlpha = 0.0f;
+        
+        Transition = false;
+    }
 }
 
 void StageManager::Update()
@@ -32,6 +44,11 @@ void StageManager::Update()
         return;
     }
     
+    if (Transition)
+    {
+        UpdateTransition();
+    }
+    
     GetStage();
     CurrentStage->Update();
 }
@@ -39,7 +56,15 @@ void StageManager::Update()
 void StageManager::Draw()
 {
     BeginDrawing();
-        CurrentStage->Draw();
+        if (Transition)
+        {
+            DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, TransitionAlpha));
+            
+        }
+        else
+        {
+            CurrentStage->Draw();
+        }
         DrawFPS(10, GetScreenHeight()-20);
     EndDrawing();
 }
@@ -47,21 +72,24 @@ void StageManager::Draw()
 bool StageManager::Close()
 {
     // De-Initialization
-        
-    // Unload button texture
-    // Unload sound
     return false;
 }
 
 void StageManager::GetStage()
 {
     // Updates the stage to the one currently stored in CurrentStage
-    shared_ptr<Stage> Stage = CurrentStage->GetStage();
-    if (Stage!=nullptr)
+    shared_ptr<Stage> NewStage = CurrentStage->GetStage();
+    if (NewStage != nullptr)
     {
-        CurrentStage = Stage;
+        if (CurrentStage != NewStage) // If new stage is different from current - do transition
+        {
+            Transition = true;
+            CurrentStage = NewStage;
+        }
     }
 }
+
+
 
 
 

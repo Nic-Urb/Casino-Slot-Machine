@@ -62,6 +62,7 @@ MainStage::~MainStage()
     
     UnloadTexture(BackgroundTexture);
     UnloadTexture(MessageTexture);
+    UnloadTexture(MessageTexture1);
     UnloadTexture(BottomBarTexture);
 }
 

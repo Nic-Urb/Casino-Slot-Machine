@@ -15,9 +15,9 @@
 using namespace std;
 
 /**
-    This class manages which stage (cStage) is currently being displayed and rendered within the window
+    This class manages which stage (Stage) is currently being displayed and rendered within the window
  */
-class StageManager //@TODO: Add transition while changing; if(current != new) -> do transition
+class StageManager
 {
     //Singleton
     StageManager();
@@ -35,6 +35,13 @@ private:
     
     // Tracks which stage is currently used
     shared_ptr<Stage> CurrentStage;
+    
+    // Flags indicating if a transition should be triggered
+    bool Transition = false;
+    
+    float TransitionAlpha = 0.0f;
+    
+    void UpdateTransition();
     
     /**
         Initialize the stage to being displayed and rendered within the window - this function is only called if there is no current stag
