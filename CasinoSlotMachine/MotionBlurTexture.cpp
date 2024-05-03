@@ -7,7 +7,7 @@
 
 #include "MotionBlurTexture.hpp"
 
-cMotionBlurTexture::cMotionBlurTexture(Texture2D Texture, float Radius, float Angle, int Points) : Texture(Texture)
+MotionBlurTexture::MotionBlurTexture(const Texture2D& Texture, float Radius, float Angle, int Points) : Texture(Texture)
 {
    auto GetPointOverLine = [=]  {
         auto AngleOverX = Angle - PI / 2;  // Angle 0 is a vertical line, so I rotate it 45 degrees clockwise (subtract)
@@ -28,7 +28,7 @@ cMotionBlurTexture::cMotionBlurTexture(Texture2D Texture, float Radius, float An
     }
 }
 
-void cMotionBlurTexture::Draw() const 
+void MotionBlurTexture::Draw() const
 {
     for (const auto& Point : Points) 
     {
@@ -36,7 +36,7 @@ void cMotionBlurTexture::Draw() const
     }
 }
 
-void cMotionBlurTexture::SetPosition(Vector2 Pos)
+void MotionBlurTexture::SetPosition(const Vector2& Pos)
 {
     for (auto& Point : Points)
     {

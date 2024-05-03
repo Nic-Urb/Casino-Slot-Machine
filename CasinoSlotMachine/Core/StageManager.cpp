@@ -21,7 +21,7 @@ StageManager &StageManager::GetInstance()
 void StageManager::Init()
 { 
     // make_shared creates a pointer for shared_ptr<Stage>
-    CurrentStage = make_shared<MainStage>();
+    CurrentStage = std::make_shared<MainStage>();
 }
 
 void StageManager::UpdateTransition()
@@ -59,7 +59,6 @@ void StageManager::Draw()
         if (Transition)
         {
             DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, TransitionAlpha));
-            
         }
         else
         {
@@ -78,7 +77,7 @@ bool StageManager::Close()
 void StageManager::GetStage()
 {
     // Updates the stage to the one currently stored in CurrentStage
-    shared_ptr<Stage> NewStage = CurrentStage->GetStage();
+    std::shared_ptr<Stage> NewStage = CurrentStage->GetStage();
     if (NewStage != nullptr)
     {
         if (CurrentStage != NewStage) // If new stage is different from current - do transition

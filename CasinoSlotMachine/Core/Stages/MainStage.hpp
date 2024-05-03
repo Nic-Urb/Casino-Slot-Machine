@@ -12,7 +12,6 @@
 #include "../GUI/Reels.hpp"
 #include "ReelsManager.hpp"
 
-using namespace std;
 
 /**
     Display main stage
@@ -26,11 +25,11 @@ public:
     
     void Update() override;
     void Draw() override;
-    shared_ptr<Stage> GetStage() override;
+    std::shared_ptr<Stage> GetStage() override;
     
 private:
     
-    shared_ptr<Stage> Stage;
+    std::shared_ptr<Stage> Stage;
     
     ReelsManager& ReelsManager;
     
@@ -39,16 +38,16 @@ private:
     Texture2D MessageTexture;
     Texture2D MessageTexture1;
     
-    unique_ptr<Button> SwitchBtn; // Switch stage to InfoStage
+    std::unique_ptr<Button> SwitchBtn; // Switch stage to InfoStage
     
-    unique_ptr<Button> PlayBtn;
+    std::unique_ptr<Button> PlayBtn;
     
-    unique_ptr<Button> SoundBtn;
+    std::unique_ptr<Button> SoundBtn;
     
-    unique_ptr<Button> IncBetBtn;
-    unique_ptr<Button> DecBetBtn;
+    std::unique_ptr<Button> IncBetBtn;
+    std::unique_ptr<Button> DecBetBtn;
 
-    unique_ptr<Reels> ReelsPtr;
+    std:: unique_ptr<Reels> ReelsPtr;
     
     bool SoundMuted = false;
     

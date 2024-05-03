@@ -8,9 +8,8 @@
 #include "ReelsManager.hpp"
 
 
-
 ReelsManager::ReelsManager() :
-            Reels(3,vector<Symbol>(3)) // Init 3x3 vector matrix - 3 reels with 3 slots on each
+            Reels(3,std::vector<Symbol>(3)) // Init 3x3 vector matrix - 3 reels with 3 slots on each
 {
     // Fill symbols vector - insert objects at the end of vector
     Symbols.push_back({"S", Texture(), "Resources/Textures/Symbols/Symbol1.png", 100.0, 0, 200});
@@ -129,9 +128,9 @@ int ReelsManager::BiniarySearch(int Target)
 
 int ReelsManager::GenerateRandomNumber(int Min, int Max)
 {
-    random_device rd; // Random device, gives some initial randomness to help initialize things
-    mt19937 gen(rd()); // Algorithm to generate the random number
-    uniform_int_distribution<int> dis(Min,Max);
+    std::random_device rd; // Random device, gives some initial randomness to help initialize things
+    std::mt19937 gen(rd()); // Algorithm to generate the random number
+    std::uniform_int_distribution<int> dis(Min,Max);
     return dis(gen);
 }
 

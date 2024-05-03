@@ -11,22 +11,19 @@
 #include <random>
 #include "raylib.h"
 
-using namespace std;
 
-/**
- 
- */
-class cMotionBlurTexture
+
+class MotionBlurTexture
 {
 public:
     
-    cMotionBlurTexture(Texture2D Texture, float Radius, float Angle, int Points);
+    MotionBlurTexture(const Texture2D& Texture, float Radius, float Angle, int Points);
 
     void Draw() const;
-    void SetPosition(Vector2 Pos);
+    void SetPosition(const Vector2& Pos);
 
 private:
-    vector<Vector2> Points;
+    std::vector<Vector2> Points;
     Texture2D Texture;
 };
 

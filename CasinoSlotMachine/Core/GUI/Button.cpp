@@ -12,25 +12,11 @@ Button::Button()
     // @TODO: Load some default texture
 }
 
-Button::Button(string TexturePath, string HoveredTexturePath, string SfxPath)
+Button::Button(const std::string& TexturePath, const std::string& HoveredTexturePath, const std::string& SfxPath)
 {
-    try {
-        BtnTexture = LoadTexture(TexturePath.c_str());
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-    
-    try {
-        BtnHoveredTexture = LoadTexture(HoveredTexturePath.c_str());
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-    
-    try {
-        BtnSFX = LoadSound(SfxPath.c_str());
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Sound failed to load");
-    }
+    BtnTexture = LoadTexture(TexturePath.c_str());
+    BtnHoveredTexture = LoadTexture(HoveredTexturePath.c_str());
+    BtnSFX = LoadSound(SfxPath.c_str());
 }
 
 

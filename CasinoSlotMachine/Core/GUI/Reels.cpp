@@ -8,7 +8,7 @@
 #include "Reels.hpp"
 
 
-Reels::Reels(string ReelTexturePath) :
+Reels::Reels(const std::string& ReelTexturePath) :
     ReelsManager(ReelsManager::GetInstance())
 {
     Init(ReelTexturePath);
@@ -27,7 +27,7 @@ void Reels::Update()
 
 void Reels::Draw()
 {
-    const vector<vector<Symbol>> Reels = ReelsManager.GetReels();
+    const std::vector<std::vector<Symbol>> Reels = ReelsManager.GetReels();
     
     // Draw 3 reels from a middle point
     for (int i = 0; i < 3; i++) {
@@ -46,9 +46,9 @@ void Reels::Draw()
             
             if (ReelsManager.IsRunning())
             {
-                const unique_ptr<cMotionBlurTexture> MotionBlur = make_unique<cMotionBlurTexture>(Texture,20,0,100);
-                MotionBlur->SetPosition({ReelsPositions[i].x + (ReelsTexture.width - Texture.height) / 2,y});
-                MotionBlur->Draw();
+                MotionBlurTexture MotionBlur = MotionBlurTexture(Texture, 20, 0, 100);
+                MotionBlur.SetPosition({ReelsPositions[i].x + (ReelsTexture.width - Texture.height) / 2,y});
+                MotionBlur.Draw();
             }
         }
     }
@@ -56,14 +56,10 @@ void Reels::Draw()
     DrawLines();
 }
 
-void Reels::Init(string ReelTexturePath)
+void Reels::Init(const std::string& ReelTexturePath)
 {
     // Load reels texture
-    try {
-        ReelsTexture = LoadTexture(ReelTexturePath.c_str());
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
+    ReelsTexture = LoadTexture(ReelTexturePath.c_str());
     
     // Initialize reels positions
     ReelsPositions.push_back({ ((GetScreenWidth() / 2.0f) - ReelsTexture.width / 2.0f) - 200,
@@ -74,22 +70,17 @@ void Reels::Init(string ReelTexturePath)
         (GetScreenHeight() / 2.0f) - ReelsTexture.height / 2.0f });
     
     // Load all symbols textures
-    try {
-        ReelsManager.LoadTextures();
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-
+    ReelsManager.LoadTextures();
 }
 
 void Reels::DrawLines()
 {
-    vector<WinningLines> Lines = ReelsManager.GetWinningLines();
+    std::vector<WinningLines> Lines = ReelsManager.GetWinningLines();
     
     const int ReelWidth = ReelsTexture.width;
     const int ReelHeight = ReelsTexture.height;
 
-    for (const auto Line : Lines)
+    for (const auto& Line : Lines)
     {
         switch (Line)
         {

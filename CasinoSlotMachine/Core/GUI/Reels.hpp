@@ -11,7 +11,6 @@
 #include "MotionBlurTexture.hpp"
 #include "raylib.h"
 
-using namespace std;
 
 /**
     This class contains a reels , which can be rendered within a window
@@ -21,7 +20,7 @@ class Reels
     
 public:
     
-    Reels(string ReelTexturePath);
+    Reels(const std::string& ReelTexturePath);
     ~Reels();
     
     void Update();
@@ -32,14 +31,14 @@ private:
     // Instance to ReelsManager class
     ReelsManager& ReelsManager;
     
-    vector<Vector2> ReelsPositions;
+    std::vector<Vector2> ReelsPositions;
     
     Texture2D ReelsTexture;
     
     /**
         Initialize three reels columns and save them in the 'Reels' variable
      */
-    void Init(string ReelTexturePath);
+    void Init(const std::string& ReelTexturePath);
     
     void DrawLines();
 };

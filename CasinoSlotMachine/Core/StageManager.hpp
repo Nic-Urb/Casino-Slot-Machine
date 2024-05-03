@@ -12,7 +12,6 @@
 
 #include "MainStage.hpp"
 
-using namespace std;
 
 /**
     This class manages which stage (Stage) is currently being displayed and rendered within the window
@@ -34,7 +33,7 @@ public:
 private:
     
     // Tracks which stage is currently used
-    shared_ptr<Stage> CurrentStage;
+    std::shared_ptr<Stage> CurrentStage;
     
     // Flags indicating if a transition should be triggered
     bool Transition = false;

@@ -13,15 +13,11 @@ InfoStage::InfoStage()
 {
     Stage = nullptr;
     
-    SwitchBtn = make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/Button.wav");
+    SwitchBtn = std::make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/Button.wav");
     
     SwitchBtn->SetPosition(Vector2{GetScreenWidth()-40.0f,20});
     
-    try {
-        BackgroundTexture = LoadTexture("Resources/Textures/BackgroundInfo.png");
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
+    BackgroundTexture = LoadTexture("Resources/Textures/BackgroundInfo.png");
 }
 
 InfoStage::~InfoStage()
@@ -35,7 +31,7 @@ void InfoStage::Update()
     if (SwitchBtn->IsPressed())
     {
         // Change scene to settings
-       Stage = make_shared<MainStage>();
+       Stage = std::make_shared<MainStage>();
     }
 }
 
@@ -46,7 +42,7 @@ void InfoStage::Draw()
     SwitchBtn->Draw();
 }
 
-shared_ptr<Stage> InfoStage::GetStage()
+std::shared_ptr<Stage> InfoStage::GetStage()
 { 
     return Stage;
 }

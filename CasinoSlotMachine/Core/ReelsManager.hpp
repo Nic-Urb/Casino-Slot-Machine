@@ -14,16 +14,14 @@
 
 #include "raylib.h"
 
-using namespace std;
-
 /**
     A custom data structure containing symbol data
  */
 struct Symbol
 {
-    string Name;
+    std::string Name;
     Texture2D Texture;
-    string TexturePath;
+    std::string TexturePath;
     float WinValue;
     int MinRandom;
     int MaxRandom;
@@ -90,9 +88,9 @@ public:
     float GetBet() const { return Bet; }
     float GetPayoutPrize() const { return PayoutPrize; }
     bool IsRunning() const { return Running; }
-    vector<Symbol> GetSymbols() const { return Symbols; }
-    vector<vector<Symbol>> GetReels() const { return Reels; }
-    vector<WinningLines> GetWinningLines() const { return WinningLines;}
+    std::vector<Symbol> GetSymbols() const { return Symbols; }
+    std::vector<std::vector<Symbol>> GetReels() const { return Reels; }
+    std::vector<WinningLines> GetWinningLines() const { return WinningLines;}
     
     void SetMoney(float NewMoney)
     {
@@ -112,7 +110,7 @@ private:
     float PayoutPrize;
     
     // Vector containing all possible bet values
-    vector<BetValues> Bets = { ZERO_TEN, ZERO_TWENTY, ZERO_FOURTY, ZERO_FIFTY, ZERO_EIGHTY, ONE, ONE_FIFTY, FIVE, TEN, FIFTY, HUNDRED };
+    std::vector<BetValues> Bets = { ZERO_TEN, ZERO_TWENTY, ZERO_FOURTY, ZERO_FIFTY, ZERO_EIGHTY, ONE, ONE_FIFTY, FIVE, TEN, FIFTY, HUNDRED };
     
     // True, if the reels are still spinning, else false
     bool Running = false;
@@ -121,13 +119,13 @@ private:
     bool CanPlay = false;
     
     // Vector containing all possible symbol data
-    vector<Symbol> Symbols;
+    std::vector<Symbol> Symbols;
     
     // 2D-Vector containing reels filled with symbols
-    vector<vector<Symbol>> Reels;
+    std::vector<std::vector<Symbol>> Reels;
     
     // Winning lines map
-    vector<WinningLines> WinningLines;
+    std::vector<WinningLines> WinningLines;
     
     /**
         Do binary search and find closest location element

@@ -12,8 +12,6 @@
 #include "raylib.h"
 
 
-using namespace std;
-
 /**
     A core class responsible for running the entire game loop
  */

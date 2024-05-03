@@ -11,8 +11,6 @@
 #include <string>
 #include "raylib.h"
 
-using namespace std;
-
 /**
     This class contains a button along with its logic, which can be rendered within a window
  */
@@ -22,7 +20,7 @@ class Button
 public:
     
     Button();
-    Button(string TexturePath, string HoveredTexturePath, string SfxPath);
+    Button(const std::string& TexturePath, const std::string& HoveredTexturePath, const std::string& SfxPath);
     ~Button();
     
     

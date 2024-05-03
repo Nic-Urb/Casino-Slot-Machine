@@ -13,13 +13,13 @@ MainStage::MainStage() :
 {
     Stage = nullptr;
     
-    SwitchBtn = make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/ButtonSound.wav");
-    PlayBtn = make_unique<Button>("Resources/Textures/Play.png", "Resources/Textures/PlayPressed.png", "Resources/Audio/ButtonSound.wav");
-    SoundBtn = make_unique<Button>("Resources/Textures/Sound.png","Resources/Textures/SoundPressed.png", "Resources/Audio/ButtonSound.wav");
-    IncBetBtn = make_unique<Button>("Resources/Textures/Inc.png","Resources/Textures/IncPressed.png","Resources/Audio/ButtonSound.wav");
-    DecBetBtn = make_unique<Button>("Resources/Textures/Dec.png","Resources/Textures/DecPressed.png","Resources/Audio/ButtonSound.wav");
+    SwitchBtn = std::make_unique<Button>("Resources/Textures/Back.png", "Resources/Textures/BackPressed.png", "Resources/Audio/ButtonSound.wav");
+    PlayBtn = std::make_unique<Button>("Resources/Textures/Play.png", "Resources/Textures/PlayPressed.png", "Resources/Audio/ButtonSound.wav");
+    SoundBtn = std::make_unique<Button>("Resources/Textures/Sound.png","Resources/Textures/SoundPressed.png", "Resources/Audio/ButtonSound.wav");
+    IncBetBtn = std::make_unique<Button>("Resources/Textures/Inc.png","Resources/Textures/IncPressed.png","Resources/Audio/ButtonSound.wav");
+    DecBetBtn = std::make_unique<Button>("Resources/Textures/Dec.png","Resources/Textures/DecPressed.png","Resources/Audio/ButtonSound.wav");
     
-    ReelsPtr = make_unique<Reels>("Resources/Textures/Reel.png");
+    ReelsPtr = std::make_unique<Reels>("Resources/Textures/Reel.png");
     
     SwitchBtn->SetPosition(Vector2{GetScreenWidth()-40.0f,20});
     PlayBtn->SetPosition(Vector2{598.0f,GetScreenHeight()-51.5f});
@@ -27,32 +27,11 @@ MainStage::MainStage() :
     IncBetBtn->SetPosition(Vector2{40.0f,GetScreenHeight()-51.5f});
     DecBetBtn->SetPosition(Vector2{90.0f,GetScreenHeight()-51.5f});
     
-    // Try to load the textures
-
-    try {
-        BackgroundTexture = LoadTexture("Resources/Textures/Background.png");
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-    
-    try {
-        MessageTexture = LoadTexture("Resources/Textures/Message.png");
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-    
-    try {
-        MessageTexture1 = LoadTexture("Resources/Textures/Message.png");
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-    
-    try {
-        BottomBarTexture = LoadTexture("Resources/Textures/BottomBar.png");
-    } catch (const runtime_error& exc) {
-        TraceLog(LOG_ERROR, "Texture failed to load");
-    }
-
+    // Load textures
+    BackgroundTexture = LoadTexture("Resources/Textures/Background.png");
+    MessageTexture = LoadTexture("Resources/Textures/Message.png");
+    MessageTexture1 = LoadTexture("Resources/Textures/Message.png");
+    BottomBarTexture = LoadTexture("Resources/Textures/BottomBar.png");
 }
 
 MainStage::~MainStage()
@@ -79,7 +58,7 @@ void MainStage::Update()
     // Change stage to info stage
     if (SwitchBtn->IsPressed())
     {
-        Stage = make_shared<InfoStage>();
+        Stage = std::make_shared<InfoStage>();
     }
     
     if ((PlayBtn->IsPressed() || IsKeyPressed(KEY_SPACE)) && ReelsManager.CheckCanPlay())
@@ -169,7 +148,7 @@ void MainStage::Draw()
     DrawText(TextFormat("Bet: %02.02f",ReelsManager.GetBet()), (160+MessageTexture1.width/2)-40, (GetScreenHeight()-41), 20.0f, WHITE);
 }
 
-shared_ptr<Stage> MainStage::GetStage() 
-{ 
+std::shared_ptr<Stage> MainStage::GetStage()
+{
     return Stage;
 }

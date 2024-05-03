@@ -21,14 +21,14 @@ public:
     
     void Update() override;
     void Draw() override;
-    shared_ptr<Stage> GetStage() override;
+    std::shared_ptr<Stage> GetStage() override;
     
 private:
     
     Texture2D BackgroundTexture;
     
-    unique_ptr<Button> SwitchBtn;
+    std::unique_ptr<Button> SwitchBtn;
     
-    shared_ptr<Stage> Stage;
+    std::shared_ptr<Stage> Stage;
     
 };
